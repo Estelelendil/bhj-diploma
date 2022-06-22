@@ -32,7 +32,7 @@ app.get('*', function (_, res) {
     res.sendFile(path.resolve(`${__dirname}/${PUBLIC_PATH}`, INDEX_FILE));
 });
 
-app.listen(PORT, () => console.log(`Server started at ${PORT}`));
+app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
 
 
 function setDefaultUser(database){
