@@ -38,12 +38,24 @@ class Sidebar {
     const sideBarMenu = document.querySelector('.sidebar-menu')
     const btnEnter = Array.from(sideBarMenu.querySelectorAll('a'))[0];
     const btnRegistr = Array.from(sideBarMenu.querySelectorAll('a'))[1];
+    const btnExitr = Array.from(sideBarMenu.querySelectorAll('a'))[2];
  
     
     btnRegistr.onclick = function() {
       console.log(App.getModal('register'));  
       App.getModal('register').open();
     }
+
+    btnEnter.onclick = function() {
+      console.log(App.getModal('login'));  
+      App.getModal('login').open();
+    }
+
+    btnExit.onclick = function() {
+     User.logout();
+     App.setState( 'init' );
+    }
+  
 // При нажатии на кнопку «Регистрация» необходимо открыть окно #modal-register (предварительно найдя его через App.getModal) с помощью метода Modal.open()
 // При нажатии на кнопку «Войти» необходимо открыть окно #modal-login (предварительно найдя его через App.getModal) с помощью метода Modal.open()
 // При нажатии на кнопку «Выйти» необходимо вызвать метод User.logout и после успешного выхода (response.success = true), нужно вызвать App.setState( 'init' )
