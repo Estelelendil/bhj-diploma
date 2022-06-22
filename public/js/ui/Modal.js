@@ -23,12 +23,13 @@ class Modal {
    * */
 
   registerEvents() {
-    const btn = this.element.querySelector('button[data-dismiss="modal"]')
-    console.log(btn)
-    btn.onclick = ()=>{
-      console.log(this)
+    const btns = this.element.querySelectorAll('button[data-dismiss="modal"]')
+    // console.log(btn)
+    
+    btns.forEach(element =>element.onclick = ()=>{
+      // console.log(this)
       this.onClose();
-    }
+    })
   }
 
   /**

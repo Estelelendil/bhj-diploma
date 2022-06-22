@@ -1,4 +1,4 @@
-const { response } = require("express");
+// const { response } = require("express");
 
 /**
  * Класс User управляет авторизацией, выходом и
@@ -121,16 +121,16 @@ const user = {
   name: 'Vlad'
 };
 
-User.setCurrent( user );
+// User.setCurrent( user );
 
-console.log( localStorage.user ); // строка "{"id":12,"name":"Vlad"}
+// console.log( localStorage.user ); // строка "{"id":12,"name":"Vlad"}
 
-User.setCurrent( user );
-let current = User.current();
+// User.setCurrent( user );
+// let current = User.current();
 
-console.log( current ); // объект { id: 12, name: 'Vlad' }
+// console.log( current ); // объект { id: 12, name: 'Vlad' }
 
-User.unsetCurrent();
+// User.unsetCurrent();
 
-current = User.current();
-console.log( current ); // undefined
+// current = User.current();
+// console.log( current ); // undefined

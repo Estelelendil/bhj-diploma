@@ -42,19 +42,19 @@ class Sidebar {
  
     
     btnRegistr.onclick = function() {
-      console.log(App.getModal('register'));  
+      // console.log(App.getModal('register'));  
       App.getModal('register').open();
     }
 
     btnEnter.onclick = function() {
-      console.log(App.getModal('login'));  
+      // console.log(App.getModal('login'));  
       App.getModal('login').open();
     }
 
-    btnExit.onclick = function() {
-     User.logout();
-     App.setState( 'init' );
-    }
+    // btnExit.onclick = function() {
+    //  User.logout();
+    //  App.setState( 'init' );
+    // }
   
 // При нажатии на кнопку «Регистрация» необходимо открыть окно #modal-register (предварительно найдя его через App.getModal) с помощью метода Modal.open()
 // При нажатии на кнопку «Войти» необходимо открыть окно #modal-login (предварительно найдя его через App.getModal) с помощью метода Modal.open()
