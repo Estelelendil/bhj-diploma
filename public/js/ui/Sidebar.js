@@ -38,11 +38,7 @@ class Sidebar {
     const sideBarMenu = document.querySelector('.sidebar-menu')
     const btnEnter = Array.from(sideBarMenu.querySelectorAll('a'))[0];
     const btnRegistr = Array.from(sideBarMenu.querySelectorAll('a'))[1];
-    console.log(btnEnter)
-    btnEnter.onclick = function(){
-      let popup = App.getModal('#modal-register');
-     console.log(popup)
-    }
+ 
     
     btnRegistr.onclick = function() {
       console.log(App.getModal('register'));  
