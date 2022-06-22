@@ -37,7 +37,7 @@ class User {
    * */
   static fetch(callback) {
     createRequest({
-      url: URL + '/current',
+      url: this.URL + '/current',
       data: this.current(),
       method: 'GET',
       callback: (err, response) =>{
@@ -83,7 +83,7 @@ class User {
    * */
   static register(data, callback) {
   createRequest({
-    url: URL + '/register',
+    url: this.URL + '/register',
     data: data,
     callback: (err, response) =>{
       if(response && response.success){
@@ -104,7 +104,7 @@ class User {
    * */
   static logout(callback) {
     createRequest({
-      url: URL + '/logout',
+      url: this.URL + '/logout',
       callback: (err, response)=>{
         if(response && response.success){
           this.unsetCurrent();
@@ -116,10 +116,10 @@ class User {
   }
 }
 
-const user = {
-  id: 12,
-  name: 'Vlad'
-};
+// const user = {
+//   id: 12,
+//   name: 'Vlad'
+// };
 
 // User.setCurrent( user );
 
