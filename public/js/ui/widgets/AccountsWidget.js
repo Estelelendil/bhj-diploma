@@ -4,6 +4,7 @@
  * */
 
 class AccountsWidget {
+  
   /**
    * Устанавливает текущий элемент в свойство element
    * Регистрирует обработчики событий с помощью
@@ -14,6 +15,12 @@ class AccountsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
+    if(!element){
+      throw new Error('Элемент не передан');
+    }
+    this.element = element;
+    this.registerEvents();
+    this.update()
 
   }
 
@@ -25,7 +32,12 @@ class AccountsWidget {
    * вызывает AccountsWidget.onSelectAccount()
    * */
   registerEvents() {
-
+    const btn = this.element.querySelector('.create-account');
+    btn.onclick = () => {
+      App.getModal('createAccount').open();
+    }
+    const existingAccounts = Array.from(this.element.querySelectorAll('.account a'));
+    existingAccounts.forEach(elem =>elem.onclick = () => this.onSelectAccount(elem));
   }
 
   /**
@@ -39,7 +51,16 @@ class AccountsWidget {
    * метода renderItem()
    * */
   update() {
-
+    const curUser = User.current();
+    if(curUser){
+      Account.list(curUser, (err, response)=>{
+        if(response && response.success){
+          // console.log(response)
+          this.clear()
+          this.renderItem(response.data)
+        }
+      });
+    }
   }
 
   /**
@@ -48,7 +69,8 @@ class AccountsWidget {
    * в боковой колонке
    * */
   clear() {
-
+    const accounts = this.element.querySelectorAll('.account');
+    accounts.forEach(elem => elem.parentNode.removeChild(elem));
   }
 
   /**
@@ -59,7 +81,9 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-
+    this.element.querySelector('.active').classList.remove('active');
+    element.classList.add('active');
+    App.showPage( 'transactions', { account_id: element.dataset.id });
   }
 
   /**
@@ -68,7 +92,12 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML(item){
-
+    return `<li class="active account" data-id='${item.id}'>
+    <a href="#">
+        <span>${item.name}</span> /
+        <span>${item.sum}</span>
+    </a>
+</li>`
   }
 
   /**
@@ -77,7 +106,11 @@ class AccountsWidget {
    * AccountsWidget.getAccountHTML HTML-код элемента
    * и добавляет его внутрь элемента виджета
    * */
-  renderItem(data){
-
+  renderItem(data){//data массив объектов счетов
+    const accountsHtml = data.map((item)=>{//массив строк разметка каждого счета
+      return this.getAccountHTML(item);
+    })
+    accountsHtml.forEach(elem => this.element.insertAdjacentHTML('beforeend', elem));
+    this.registerEvents();
   }
 }
