@@ -185,6 +185,78 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "15vjbz0l4x1qqv2",
+      "type": "income",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:01:26.653Z"
+    },
+    {
+      "id": "15vjbsol4x1rtrc",
+      "type": "income",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:02:17.063Z"
+    },
+    {
+      "id": "15vj12gl4x1rvvc",
+      "type": "income",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:02:19.799Z"
+    },
+    {
+      "id": "15vj3v0l4x1rx9j",
+      "type": "income",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:02:21.606Z"
+    },
+    {
+      "id": "15vj3u4l4x1ryg0",
+      "type": "income",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:02:23.135Z"
+    },
+    {
+      "id": "15vjclcl4x1s06k",
+      "type": "income",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:02:25.387Z"
+    },
+    {
+      "id": "15vj1h4l4x1s62r",
+      "type": "income",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:02:33.026Z"
+    },
+    {
+      "id": "15vj1d0l4x1sn8m",
+      "type": "income",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:02:55.269Z"
+    },
+    {
+      "id": "15vj7b8l4x1vezv",
+      "type": "expense",
+      "name": "Александра",
+      "sum": 5000,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-27T18:05:04.554Z"
     }
   ]
 }
