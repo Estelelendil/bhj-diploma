@@ -19,7 +19,7 @@ class CreateTransactionForm extends AsyncForm {
    * Обновляет в форме всплывающего окна выпадающий список
    * */
   renderAccountsList() {
-    console.trace('kus')
+   
     const curUser = User.current();
     const select = this.element.querySelector('.accounts-select')
     if(curUser){
@@ -28,7 +28,7 @@ class CreateTransactionForm extends AsyncForm {
           select.innerHTML = '';
         // console.log(response.data, select);
         response.data.forEach(element => {
-        
+          console.log('получение списков счетов',response)
           select.insertAdjacentHTML('beforeend', `<option value="${element.id}">${element.name}</option>`)
         });
         }
@@ -47,8 +47,8 @@ class CreateTransactionForm extends AsyncForm {
 
     Transaction.create(data, (err,response)=>{
       if(response && response.success){
-       
-        App.update(response);
+        console.log('запрос на создание транзакции',response);
+        App.update();
         App.getModal('newIncome').close();
         App.getModal('newExpense').close();
             }

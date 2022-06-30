@@ -38,9 +38,12 @@ class AsyncForm {
   getData() {
     let inputs = Array.from(this.element.querySelectorAll('input'));
     // inputs.forEach(item =>{result[item.name]= item.value})
-
-
+    let select = this.element.querySelector('select')
     const result = {};
+    if(select){
+      result[select.name]= select.value; 
+    }
+
     for (const input of inputs) {
       const { name, value} = input;
       result[name] = value;

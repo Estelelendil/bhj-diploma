@@ -39,10 +39,10 @@ class Sidebar {
     const btnEnter = Array.from(sideBarMenu.querySelectorAll('a'))[0];
     const btnRegistr = Array.from(sideBarMenu.querySelectorAll('a'))[1];
     const btnExit = Array.from(sideBarMenu.querySelectorAll('a'))[2];
-    console.log(btnExit)
+    
     
     btnRegistr.onclick = function() {
-      console.log(App.getModal('register'));  
+      // console.log(App.getModal('register'));  
       App.getModal('register').open();
     }
 

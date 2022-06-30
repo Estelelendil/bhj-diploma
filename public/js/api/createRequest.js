@@ -28,11 +28,12 @@ const createRequest = (options = {}) => {
   } 
   else {
     formData = new FormData;
+    console.log('данные формы', options)
     for (prop in options.data) {
       formData.append( prop, options.data[prop] );
     }
     xhr.open(options.method, options.url );
-    console.log(formData)
+    // console.log(formData)
     xhr.send( formData );
   }
 };

@@ -11,6 +11,12 @@
       "email": "estelelendil@mail.ru",
       "password": "111",
       "id": "15vj8kkl4progao"
+    },
+    {
+      "name": "Kus",
+      "email": "kus@mail.ru",
+      "password": "kus",
+      "id": "3omibwc5h4l50zvenv"
     }
   ],
   "accounts": [
@@ -48,6 +54,11 @@
       "name": "Уф",
       "user_id": "15vj8kkl4progao",
       "id": "15vj784l4rax2nq"
+    },
+    {
+      "name": "Test(Kus)",
+      "user_id": "3omibwc5h4l50zvenv",
+      "id": "3omibwc73wl50zw14n"
     }
   ],
   "transactions": [
@@ -257,6 +268,97 @@
       "sum": 5000,
       "user_id": "15vj8kkl4progao",
       "created_at": "2022-06-27T18:05:04.554Z"
+    },
+    {
+      "id": "3omibwc7qsl50z2bd2",
+      "type": "income",
+      "name": "fdhshfshsdsh",
+      "sum": 200,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T11:57:32.293Z"
+    },
+    {
+      "id": "3omibwc8zkl50z39w3",
+      "type": "income",
+      "name": "fdhshfshsdsh",
+      "sum": 255,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T11:58:17.042Z"
+    },
+    {
+      "id": "3omibwc790l50z52s0",
+      "type": "income",
+      "name": "111",
+      "sum": 111,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T11:59:41.135Z"
+    },
+    {
+      "id": "3omibwc62ol50z5ep3",
+      "type": "income",
+      "name": "111",
+      "sum": 111,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T11:59:56.582Z"
+    },
+    {
+      "id": "3omibwc3h4l50z9lg5",
+      "type": "income",
+      "name": "111",
+      "sum": 255,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T12:03:11.956Z"
+    },
+    {
+      "id": "3omibwc4hwl50zwcse",
+      "type": "income",
+      "name": "Test",
+      "sum": 123123,
+      "user_id": "3omibwc5h4l50zvenv",
+      "created_at": "2022-06-30T12:20:53.821Z"
+    },
+    {
+      "id": "3omibwc870l5106pi1",
+      "type": "income",
+      "name": "fdhshfshsdsh",
+      "sum": 255,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T12:28:56.856Z"
+    },
+    {
+      "id": "3omibwc85gl510bnw1",
+      "type": "income",
+      "name": "fdhshfshsdsh",
+      "sum": 111,
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T12:32:48.048Z"
+    },
+    {
+      "id": "3omibwc8i8l510gouk",
+      "type": "income",
+      "name": "Кусь Хрустальный",
+      "sum": 5000,
+      "account_id": "15vjeiol4rasfvo",
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T12:36:42.571Z"
+    },
+    {
+      "id": "3omibwc84sl5115xkz",
+      "type": "income",
+      "name": "проект закрыт",
+      "sum": 20000,
+      "account_id": "15vjeiol4rasfvo",
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T12:56:20.290Z"
+    },
+    {
+      "id": "3omibwc1yol5116bct",
+      "type": "expense",
+      "name": "111",
+      "sum": 111,
+      "account_id": "15vjeiol4rasfvo",
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-06-30T12:56:38.140Z"
     }
   ]
 }

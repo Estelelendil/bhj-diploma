@@ -26,7 +26,7 @@ this.registerEvents()
   update() {
     // let lastOptions;
     //Для работы метода update следует сохранить options в свойство lastOptions.блядь, что?!
-    this.render(lastOptions);// что передаем? откуда объект с Id?????
+    this.render();// что передаем? откуда объект с Id?????
   }
 
   /**
@@ -94,21 +94,21 @@ this.registerEvents()
    * в TransactionsPage.renderTransactions()
    * */
   render(options){//принимает объект с id(один или несколько?)
-    console.log(options);
-     let lastOptions = options;
-    if(!options){
-      throw new Error('Ошибка, не передан объект счета');
+    console.log('id счета?',options);
+     this.lastOptions = options;
+    if(!this.lastOptions){
+      return;
     }
     Account.get(options.account_id, (err, response)=>{
       if(response && response.success){
-        console.log(response);
-        this.renderTitle();// строка
-        Trancaction.list(response.data, (err, ()=>{
+        console.log('получение счета по Id',response);
+        this.renderTitle(response.data.name);// строка
+        Transaction.list(options,(err,response) =>{
           if(response && response.success){
-            console.log(response)
-            this.renderTransactions(response)
+            console.log('запрос на список транзакций по счету',response)
+            this.renderTransactions(response.data)
           }
-        }))
+        })
       }
     });
   }
@@ -121,7 +121,7 @@ this.registerEvents()
   clear() {
     this.renderTransactions([]);
     this.renderTitle('Название счёта');
-    lastOptions = '';
+    this.lastOptions = '';
   }
 
   /**
@@ -136,9 +136,19 @@ this.registerEvents()
    * Форматирует дату в формате 2019-03-10 03:20:41 (строка)
    * в формат «10 марта 2019 г. в 03:20»
    * */
-  formatDate(date){
-    const page = new TransactionsPage( this.getElementById( '#content' ));// чего????
-    return page.formatDate( date );
+  formatDate(inputDate){
+    const date = new Date(Date.parse(inputDate));
+    const dateString = date.toLocaleDateString("ru-RU", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    
+    const timeString =  date.toLocaleTimeString("ru-RU", {
+      hour: "numeric",
+      minute: "numeric"
+    });
+    return  `${dateString} в ${timeString}` ;
   }
 
   /**
@@ -147,26 +157,26 @@ this.registerEvents()
    * */
   getTransactionHTML(item){
     const newHTML = document.createElement('div');
-    newHTML.classList.add('transaction transaction_expense row');
+    newHTML.classList.add('transaction', 'transaction_expense', 'row');
     newHTML.innerHTML = `<div class="col-md-7 transaction__details">
     <div class="transaction__icon">
         <span class="fa fa-money fa-2x"></span>
     </div>
     <div class="transaction__info">
-        <h4 class="transaction__title">Новый будильник</h4>
-        ${this.formatDate(new Date)}
-        <div class="transaction__date">10 марта 2019 г. в 03:20</div>
+        <h4 class="transaction__title">${item.name}</h4>
+        
+        <div class="transaction__date">${this.formatDate(item.created_at)}</div>
     </div>
   </div>
   <div class="col-md-3">
     <div class="transaction__summ">
-    ${item.sum}
-        200 <span class="currency">₽</span>
+    
+    ${item.sum} <span class="currency">₽</span>
     </div>
   </div>
   <div class="col-md-2 transaction__controls">
-      ${item.id}
-      <button class="btn btn-danger transaction__remove" data-id="12">
+      
+      <button class="btn btn-danger transaction__remove" data-id="${item.id}">
           <i class="fa fa-trash"></i>  
       </button>
   </div>`
@@ -178,9 +188,11 @@ this.registerEvents()
    * используя getTransactionHTML
    * */
   renderTransactions(data){// массив объектов для каждой транзакции
+    console.log('массив данных о транзакциях', data)
     let content = this.element.querySelector('.content')
+    content.innerHTML = ''
     data.forEach(element =>{
-      content.insertAdjacentHTML('afterbegin', this.getTransactionHTML(element))
+      content.insertAdjacentElement('afterbegin', this.getTransactionHTML(element))
     })
   }
 }
