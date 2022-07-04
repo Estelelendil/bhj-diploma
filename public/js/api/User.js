@@ -28,7 +28,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    return JSON.parse(localStorage.getItem('user'))|| undefined;
+    return JSON.parse(localStorage.getItem('user'));
   }
 
   /**
@@ -115,22 +115,3 @@ class User {
     })
   }
 }
-
-// const user = {
-//   id: 12,
-//   name: 'Vlad'
-// };
-
-// User.setCurrent( user );
-
-// console.log( localStorage.user ); // строка "{"id":12,"name":"Vlad"}
-
-// User.setCurrent( user );
-// let current = User.current();
-
-// console.log( current ); // объект { id: 12, name: 'Vlad' }
-
-// User.unsetCurrent();
-
-// current = User.current();
-// console.log( current ); // undefined

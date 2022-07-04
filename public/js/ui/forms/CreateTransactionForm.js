@@ -11,7 +11,10 @@ class CreateTransactionForm extends AsyncForm {
    * */
   constructor(element) {
     super(element);
-    // this.renderAccountsList();
+    if(!element){
+      throw new Error('Элемент не найден')
+    }
+    this.renderAccountsList();
   }
 
   /**

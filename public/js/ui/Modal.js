@@ -12,6 +12,9 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(element){
+    if(!element){
+      throw new Error('Элемент не передан');
+    }
     this.element = element;
     this.registerEvents()
   }

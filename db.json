@@ -46,11 +46,6 @@
       "id": "15vjeiol4rasfvo"
     },
     {
-      "name": "Надо помедленней",
-      "user_id": "15vj8kkl4progao",
-      "id": "15vj5bsl4ravfyh"
-    },
-    {
       "name": "Уф",
       "user_id": "15vj8kkl4progao",
       "id": "15vj784l4rax2nq"
@@ -334,15 +329,6 @@
       "created_at": "2022-06-30T12:32:48.048Z"
     },
     {
-      "id": "3omibwc8i8l510gouk",
-      "type": "income",
-      "name": "Кусь Хрустальный",
-      "sum": 5000,
-      "account_id": "15vjeiol4rasfvo",
-      "user_id": "15vj8kkl4progao",
-      "created_at": "2022-06-30T12:36:42.571Z"
-    },
-    {
       "id": "3omibwc84sl5115xkz",
       "type": "income",
       "name": "проект закрыт",
@@ -352,13 +338,13 @@
       "created_at": "2022-06-30T12:56:20.290Z"
     },
     {
-      "id": "3omibwc1yol5116bct",
-      "type": "expense",
-      "name": "111",
-      "sum": 111,
-      "account_id": "15vjeiol4rasfvo",
+      "id": "15vj6e4l55lxnd0",
+      "type": "income",
+      "name": "Alexandra",
+      "sum": 1200,
+      "account_id": "15vj7p4l4r8i1eb",
       "user_id": "15vj8kkl4progao",
-      "created_at": "2022-06-30T12:56:38.140Z"
+      "created_at": "2022-07-03T17:48:50.435Z"
     }
   ]
 }

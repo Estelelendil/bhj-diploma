@@ -34,7 +34,6 @@ class Sidebar {
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
-    const popupRegistr = document.getElementById('modal-register');
     const sideBarMenu = document.querySelector('.sidebar-menu')
     const btnEnter = Array.from(sideBarMenu.querySelectorAll('a'))[0];
     const btnRegistr = Array.from(sideBarMenu.querySelectorAll('a'))[1];
@@ -52,7 +51,6 @@ class Sidebar {
     }
 
     btnExit.onclick = function() {
-      console.log(App.getModal('register'));  
       User.logout(()=>{
         App.setState( 'init' );
       })
