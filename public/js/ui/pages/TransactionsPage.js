@@ -25,8 +25,8 @@ this.registerEvents()
    * */
   update() {
     // let lastOptions;
-    //Для работы метода update следует сохранить options в свойство lastOptions.блядь, что?!
-    this.render();// что передаем? откуда объект с Id?????
+    //Для работы метода update следует сохранить options в свойство lastOptions
+    this.render(this.lastOptions);
   }
 
   /**
@@ -38,14 +38,13 @@ this.registerEvents()
   registerEvents() {
     let btnRemoveAccaunt = this.element.querySelector('.remove-account');
       btnRemoveAccaunt.onclick = ()=>{
-        console.log('кусь')
+
         this.removeAccount();
     }
     let btnsRemoveTrancaction = this.element.querySelectorAll('.transaction__remove');
     console.log('Нашлись ли кнопки удаления транзакций?', btnsRemoveTrancaction)
       btnsRemoveTrancaction.forEach((element)=>{element.addEventListener('click', (e)=>{
           e.preventDefault();
-          console.log('кусь кусь')
           this.removeTransaction(e.target.dataset.id);//индентификатор транзакции?
         });
       })
@@ -64,7 +63,6 @@ this.registerEvents()
   removeAccount() {
     // Если свойство lastOptions (см. метод render) не задано, метод не должен ничего делать.
     if(window.confirm('Вы действительно хотите удалить счет?') && this.lastOptions){
-      debugger
       Account.remove({id:this.lastOptions.account_id}, (err, response)=>{
         if(response && response.success){
           console.log('Ответ на запрос на удаление', response)
@@ -84,7 +82,7 @@ this.registerEvents()
    * */
   removeTransaction( id ) {
     if(window.confirm('Вы действительно хотите удалить эту транзакцию?')){
-      Transaction.remove({id:id}, (err, response)=>{// опять же откуда дата?
+      Transaction.remove({id:id}, (err, response)=>{
         if(response && response.success){
           App.update();
         }
@@ -163,7 +161,6 @@ this.registerEvents()
    * item - объект с информацией о транзакции
    * */
   getTransactionHTML(item){
-    // console.log('ITEM', item)
     const newHTML = document.createElement('div');
     newHTML.classList.add('transaction', `transaction_${item.type}`, 'row');
     newHTML.innerHTML = `<div class="col-md-7 transaction__details">

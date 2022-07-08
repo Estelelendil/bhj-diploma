@@ -46,11 +46,6 @@
       "id": "15vjeiol4rasfvo"
     },
     {
-      "name": "Уф",
-      "user_id": "15vj8kkl4progao",
-      "id": "15vj784l4rax2nq"
-    },
-    {
       "name": "Test(Kus)",
       "user_id": "3omibwc5h4l50zvenv",
       "id": "3omibwc73wl50zw14n"
@@ -345,6 +340,24 @@
       "account_id": "15vj7p4l4r8i1eb",
       "user_id": "15vj8kkl4progao",
       "created_at": "2022-07-03T17:48:50.435Z"
+    },
+    {
+      "id": "15vj77kl5cbrec7",
+      "type": "expense",
+      "name": "Кафе перекус",
+      "sum": 550,
+      "account_id": "15vjeiol4rasfvo",
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-07-08T10:38:25.878Z"
+    },
+    {
+      "id": "15vj6ol5cbs2sf",
+      "type": "expense",
+      "name": "Подарок Дане",
+      "sum": 1900,
+      "account_id": "15vj7p4l4r8i1eb",
+      "user_id": "15vj8kkl4progao",
+      "created_at": "2022-07-08T10:38:57.566Z"
     }
   ]
 }

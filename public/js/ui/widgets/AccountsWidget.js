@@ -81,7 +81,11 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount( element ) {
-    this.element.querySelector('.active').classList.remove('active');
+    let curActiveElement = this.element.querySelector('.active');
+    if(curActiveElement){
+
+      curActiveElement.classList.remove('active');
+    }
     element.classList.add('active');
     console.log('ожидаем id',element)
     App.showPage( 'transactions', { account_id: element.dataset.id });
@@ -93,7 +97,7 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML(item){
-    return `<li class="active account" data-id='${item.id}'>
+    return `<li class="account" data-id='${item.id}'>
     <a href="#" data-id='${item.id}'>
         <span>${item.name}</span> /
         <span>${item.sum}</span>
